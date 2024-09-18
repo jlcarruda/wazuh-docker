@@ -89,7 +89,7 @@ WAZUH_MONITORING_REPLICAS=0         ##
 ## Directory structure
 
     ├── build-docker-images
-    │   ├── docker-compose.yml
+    │   ├── docker compose.yml
     │   ├── wazuh-dashboard
     │   │   ├── config
     │   │   │   ├── config.sh
@@ -152,7 +152,7 @@ WAZUH_MONITORING_REPLICAS=0         ##
     │   │   │   └── wazuh3.indexer.yml
     │   │   └── wazuh_indexer_ssl_certs
     │   │       └── certs.yml
-    │   ├── docker-compose.yml
+    │   ├── docker compose.yml
     │   ├── generate-indexer-certs.yml
     │   ├── Migration-to-Wazuh-4.3.md
     │   └── volume-migrator.sh
@@ -179,7 +179,7 @@ WAZUH_MONITORING_REPLICAS=0         ##
     │   │       ├── wazuh.indexer.pem
     │   │       ├── wazuh.manager-key.pem
     │   │       └── wazuh.manager.pem
-    │   ├── docker-compose.yml
+    │   ├── docker compose.yml
     │   ├── generate-indexer-certs.yml
     │   └── README.md
     └── VERSION

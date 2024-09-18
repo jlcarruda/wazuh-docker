@@ -89,10 +89,10 @@ jobs:
 
 
     - name: Create single node certficates
-      run: docker-compose -f single-node/generate-indexer-certs.yml run --rm generator
+      run: docker compose -f single-node/generate-indexer-certs.yml run --rm generator
 
     - name: Start single node stack
-      run: docker-compose -f single-node/docker-compose.yml up -d
+      run: docker compose -f single-node/docker compose.yml up -d
 
     - name: Check Wazuh indexer start
       run: |
@@ -179,7 +179,7 @@ jobs:
        fi
 
     - name: Stop single node stack
-      run: docker-compose -f single-node/docker-compose.yml down
+      run: docker compose -f single-node/docker compose.yml down
 
   check-multi-node:
     runs-on: ubuntu-latest
@@ -214,10 +214,10 @@ jobs:
         docker load --input ./wazuh-dashboard.tar
 
     - name: Create multi node certficates
-      run: docker-compose -f multi-node/generate-indexer-certs.yml run --rm generator
+      run: docker compose -f multi-node/generate-indexer-certs.yml run --rm generator
 
     - name: Start multi node stack
-      run: docker-compose -f multi-node/docker-compose.yml up -d
+      run: docker compose -f multi-node/docker compose.yml up -d
 
     - name: Check Wazuh indexer start
       run: |
