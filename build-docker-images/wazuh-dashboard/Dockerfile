@@ -7,7 +7,7 @@ ARG INSTALL_DIR=/usr/share/wazuh-dashboard
 ARG WAZUH_UI_REVISION=1
 
 # Update and install dependencies
-RUN apt-get update && apt install curl libcap2-bin xz-utils -y
+RUN apt-get update && apt install curl libcap2-bin xz-utils vim -y
 
 # Create Install dir
 RUN mkdir -p $INSTALL_DIR
@@ -81,7 +81,7 @@ ENV PATTERN="" \
     WAZUH_MONITORING_REPLICAS=""
 
 # Install dependencies
-RUN apt update && apt install -y libnss3-dev fonts-liberation libfontconfig1
+RUN apt update && apt install -y libnss3-dev fonts-liberation libfontconfig1 vim
 
 # Create wazuh-dashboard user and group
 RUN getent group $GROUP || groupadd -r -g 1000 $GROUP
