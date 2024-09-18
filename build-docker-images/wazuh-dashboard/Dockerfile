@@ -23,19 +23,19 @@ RUN bash config.sh
 
 COPY config/install_wazuh_app.sh /
 RUN chmod 775 /install_wazuh_app.sh
-# RUN bash /install_wazuh_app.sh
+RUN bash /install_wazuh_app.sh
 
 # Copy and set permissions to config files
 
-# COPY config/opensearch_dashboards.yml $INSTALL_DIR/config/
-# COPY config/wazuh.yml $INSTALL_DIR/data/wazuh/config/
-# RUN chown 101:101 $INSTALL_DIR/config/opensearch_dashboards.yml && chmod 664 $INSTALL_DIR/config/opensearch_dashboards.yml
+COPY config/opensearch_dashboards.yml $INSTALL_DIR/config/
+COPY config/wazuh.yml $INSTALL_DIR/data/wazuh/config/
+RUN chown 101:101 $INSTALL_DIR/config/opensearch_dashboards.yml && chmod 664 $INSTALL_DIR/config/opensearch_dashboards.yml
 
 # # Create and set permissions to data directories
 
-# RUN mkdir -p $INSTALL_DIR/data/wazuh && chown -R 101:101 $INSTALL_DIR/data/wazuh && chmod -R 775 $INSTALL_DIR/data/wazuh
-# RUN mkdir -p $INSTALL_DIR/data/wazuh/config && chown -R 101:101 $INSTALL_DIR/data/wazuh/config && chmod -R 775 $INSTALL_DIR/data/wazuh/config
-# RUN mkdir -p $INSTALL_DIR/data/wazuh/logs && chown -R 101:101 $INSTALL_DIR/data/wazuh/logs && chmod -R 775 $INSTALL_DIR/data/wazuh/logs
+RUN mkdir -p $INSTALL_DIR/data/wazuh && chown -R 101:101 $INSTALL_DIR/data/wazuh && chmod -R 775 $INSTALL_DIR/data/wazuh
+RUN mkdir -p $INSTALL_DIR/data/wazuh/config && chown -R 101:101 $INSTALL_DIR/data/wazuh/config && chmod -R 775 $INSTALL_DIR/data/wazuh/config
+RUN mkdir -p $INSTALL_DIR/data/wazuh/logs && chown -R 101:101 $INSTALL_DIR/data/wazuh/logs && chmod -R 775 $INSTALL_DIR/data/wazuh/logs
 
 ################################################################################
 # Build stage 1 (the current Wazuh dashboard image):
