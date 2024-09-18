@@ -96,9 +96,9 @@ RUN useradd --system \
 
 # Copy and set permissions to scripts
 COPY config/entrypoint.sh /
-COPY config/wazuh_app_config.sh /
+# COPY config/wazuh_app_config.sh /
 RUN chmod 700 /entrypoint.sh
-RUN chmod 700 /wazuh_app_config.sh
+# RUN chmod 700 /wazuh_app_config.sh
 RUN chown 1000:1000 /*.sh
 
 # Copy Install dir from builder to current image
@@ -111,4 +111,4 @@ USER wazuh-dashboard
 # Services ports
 EXPOSE 443
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+# ENTRYPOINT [ "/entrypoint.sh" ]

@@ -11,10 +11,10 @@ yes | $INSTALL_DIR/bin/opensearch-dashboards-keystore create --allow-root && \
 echo $DASHBOARD_USERNAME | $INSTALL_DIR/bin/opensearch-dashboards-keystore add opensearch.username --stdin --allow-root && \
 echo $DASHBOARD_PASSWORD | $INSTALL_DIR/bin/opensearch-dashboards-keystore add opensearch.password --stdin --allow-root
 
-##############################################################################
-# Start Wazuh dashboard
-##############################################################################
+# ##############################################################################
+# # Start Wazuh dashboard
+# ##############################################################################
 
-/wazuh_app_config.sh $WAZUH_UI_REVISION
+# /wazuh_app_config.sh $WAZUH_UI_REVISION
 
-/usr/share/wazuh-dashboard/bin/opensearch-dashboards -c /usr/share/wazuh-dashboard/config/opensearch_dashboards.yml
+# /usr/share/wazuh-dashboard/bin/opensearch-dashboards -c /usr/share/wazuh-dashboard/config/opensearch_dashboards.yml
