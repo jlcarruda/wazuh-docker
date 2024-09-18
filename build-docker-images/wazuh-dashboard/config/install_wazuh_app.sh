@@ -22,4 +22,4 @@ elif [ "$MAJOR_BUILD" -eq "$MAJOR_CURRENT" ]; then
 fi
 
 # Install Wazuh App
-$INSTALL_DIR/bin/opensearch-dashboards-plugin install $WAZUH_APP --allow-root
+# $INSTALL_DIR/bin/opensearch-dashboards-plugin install $WAZUH_APP --allow-root
