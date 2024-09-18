@@ -1,5 +1,10 @@
 REPOSITORY="packages.wazuh.com/4.x"
-WAZUH_CURRENT_VERSION=$(curl --silent https://api.github.com/repos/wazuh/wazuh/releases/latest | grep '\"tag_name\":' | sed -E 's/.*\"([^\"]+)\".*/\1/' | cut -c 2-)
+
+# NOTE: We are using the v4.4.4 for debugging initially. The WAZUH_CURRENT_VERSION to be setted  
+# will gather the v4.9.0, which is latest. To avoid that, we are setting the version to v4.4.4
+#
+# WAZUH_CURRENT_VERSION=$(curl --silent https://api.github.com/repos/wazuh/wazuh/releases/latest | grep '\"tag_name\":' | sed -E 's/.*\"([^\"]+)\".*/\1/' | cut -c 2-)
+WAZUH_CURRENT_VERSION="4.4.4"
 MAJOR_BUILD=$(echo $WAZUH_VERSION | cut -d. -f1)
 MID_BUILD=$(echo $WAZUH_VERSION | cut -d. -f2)
 MINOR_BUILD=$(echo $WAZUH_VERSION | cut -d. -f3)
